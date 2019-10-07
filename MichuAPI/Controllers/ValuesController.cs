@@ -12,7 +12,8 @@ namespace MichuAPI.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            Console.WriteLine("toctoc");
+            return new string[] { "coucou", "vous" };
         }
 
         // GET api/values/5
@@ -24,6 +25,7 @@ namespace MichuAPI.Controllers
         // POST api/values
         public void Post([FromBody]string value)
         {
+            Console.WriteLine(value);
         }
 
         // PUT api/values/5
