@@ -170,6 +170,12 @@
     <Compile Include="Services\ServiceMenu.cs" />
     <Compile Include="DAO\Recette.cs" />
     <Compile Include="DAO\Menu.cs" />
+    <Compile Include="DAL\RecetteDAL.cs" />
+    <Compile Include="DAL\MenuDAL.cs" />
+    <Compile Include="DAL\ProduitDAL.cs" />
+    <Compile Include="DAL\MenuDAL.Elastic.cs" />
+    <Compile Include="DAL\ProduitDAL.Elastic.cs" />
+    <Compile Include="DAL\RecetteDAL.Elastic.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
