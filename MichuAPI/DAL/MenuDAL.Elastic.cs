@@ -1,10 +1,8 @@
 ﻿using System;
 namespace MichuAPI.DAL
 {
-	public class MenuDAL
+    public partial class  MenuDAL 
 	{
-		public MenuDAL()
-		{
-		}
+		
 	}
 }

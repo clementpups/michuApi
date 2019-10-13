@@ -1,7 +1,7 @@
 ﻿using System;
 namespace MichuAPI.DAL
 {
-	public class ProduitDAL
+	public partial class ProduitDAL
 	{
 		public ProduitDAL()
 		{

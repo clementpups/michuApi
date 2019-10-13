@@ -5,14 +5,14 @@ using MichuAPI.DAO;
 
 namespace MichuAPI.DAL
 {
-    public class ProduitDAL
+    public partial class ProduitDAL
     {
         public ProduitDAL()
         {
 
         }
 
-        public Task<List<Produit>> EnregistreeProduits(string jsonProduits, string nomIndex)
+        public async Task<List<Produit>> EnregistreeProduits(string jsonProduits, string nomIndex)
         {
 
         } 

@@ -176,6 +176,7 @@
     <Compile Include="DAL\MenuDAL.Elastic.cs" />
     <Compile Include="DAL\ProduitDAL.Elastic.cs" />
     <Compile Include="DAL\RecetteDAL.Elastic.cs" />
+    <Compile Include="DAL\ConnexionElastic.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
