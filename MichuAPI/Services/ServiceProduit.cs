@@ -14,10 +14,14 @@ namespace MichuAPI.Services
         {
             
         }
-        public async Task<IndexResponse> EnregistrerProduits(string jsonProduits, string nomIndex)
+        public static async Task<IndexResponse> EnregistrerProduits(string jsonProduits, string nomIndex)
         {
-            ProduitDAL produitDal = new ProduitDAL();
-            return await produitDal.EnregistrerProduits(jsonProduits, nomIndex);
+            return await ProduitDAL.EnregistrerProduits(jsonProduits, nomIndex);
+        }
+
+        public static async Task<ISearchResponse<Produit>> RecupererProduits(string nomIndex)
+        {
+            return await ProduitDAL.RecupererProduits(nomIndex);
         }
     }
 }

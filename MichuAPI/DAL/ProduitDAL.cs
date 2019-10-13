@@ -14,7 +14,7 @@ namespace MichuAPI.DAL
 
         }
 
-        public Task<IndexResponse> EnregistrerProduits(string jsonProduits, string nomIndex)
+        public static Task<IndexResponse> EnregistrerProduits(string jsonProduits, string nomIndex)
         {
             List<Produit> produits;
             produits = Produit.DeserialiserProduits(jsonProduits);
@@ -24,11 +24,11 @@ namespace MichuAPI.DAL
             return responseIndex;
         }
         
-        public Task<ISearchResponse<List<Produit>>> RecupererProduits(string nomIndex)
+        public static Task<ISearchResponse<Produit>> RecupererProduits(string nomIndex)
         {
             ElasticClient clientElastic = ConnexionElastic.GetClient(nomIndex);
 
-            return clientElastic.SearchAsync<List<Produit>>(p => p
+            return clientElastic.SearchAsync<Produit>(p => p
                .AllIndices()
                .From(0)
                .MatchAll());
