@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+
 namespace MichuAPI.DAO
 {
     /// <summary>
@@ -51,6 +54,13 @@ namespace MichuAPI.DAO
                     break;
             }
         }
+
+        public static List<Produit> DeserialiserProduits( string jsonProduits)
+        {
+            List<Produit> produits = JsonConvert.DeserializeObject<List<Produit>>(jsonProduits);
+            return produits;
+        }
+        
 
     }
 }
