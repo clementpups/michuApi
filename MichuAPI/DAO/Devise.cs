@@ -1,5 +1,5 @@
 ﻿using System;
-namespace MichuAPI.DAL
+namespace MichuAPI.DAO
 {
     /// <summary>
     /// énumération représentant la devise du prix du produit

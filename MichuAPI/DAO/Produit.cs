@@ -1,5 +1,5 @@
 ﻿using System;
-namespace MichuAPI.DAL
+namespace MichuAPI.DAO
 {
     /// <summary>
     /// classe représentant un produit
