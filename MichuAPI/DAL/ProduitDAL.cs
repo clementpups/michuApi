@@ -9,37 +9,29 @@ namespace MichuAPI.DAL
 {
     public partial class ProduitDAL
     {
-        public ProduitDAL()a
+        public ProduitDAL()
         {
 
         }
 
-        public Task<StringResponse> EnregistreeProduits(string jsonProduits, string nomIndex)
+        public Task<IndexResponse> EnregistreeProduits(string jsonProduits, string nomIndex)
         {
             List<Produit> produits;
             produits = Produit.DeserialiserProduits(jsonProduits);
-            ElasticLowLevelClient clientElastic = ConnexionElastic.GetClient();
+            ElasticClient clientElastic = ConnexionElastic.GetClient(nomIndex);
 
-            Task <StringResponse> responseIndex =  clientElastic.CreateAsync<StringResponse>(nomIndex, Guid.NewGuid().ToString(), PostData.Serializable(produits));
+            Task <IndexResponse> responseIndex =  clientElastic.IndexDocumentAsync(produits);
             return responseIndex;
         }
         
-        public Task<List<Produit>> RecupererProduit(string nomIndex)
+        public Task<ISearchResponse<List<Produit>>> RecupererProduits(string nomIndex)
         {
-            ElasticLowLevelClient clientElastic = ConnexionElastic.GetClient();
+            ElasticClient clientElastic = ConnexionElastic.GetClient(nomIndex);
 
-            var searchResponse = clientElastic.Search<StringResponse>(nomIndex, PostData.Serializable(new
-            {
-                query = new
-                {
-                    match = new
-                    {
-                        query = "match_all"
-                   
-                    }
-                }
-            });
-
+            return clientElastic.SearchAsync<List<Produit>>(p => p
+               .AllIndices()
+               .From(0)
+               .MatchAll());
         }
 
     }

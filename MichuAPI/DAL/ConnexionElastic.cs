@@ -11,15 +11,13 @@ namespace MichuAPI.DAL
         {
         }
 
-        public static ElasticLowLevelClient GetClient()
+        public static ElasticClient GetClient(string nomIndex)
         {
-            ElasticLowLevelClient ElasticLowLevelClient = new ElasticLowLevelClient();
-
-            ConnectionConfiguration settings = new ConnectionConfiguration(new Uri("http://example.com:9200"))
+            ConnectionSettings settings = new ConnectionSettings(new Uri(BaseElasticUri))
+                    .DefaultIndex(nomIndex)
                     .RequestTimeout(TimeSpan.FromMilliseconds(250));
-                    
 
-            return new ElasticLowLevelClient(settings);
+            return new ElasticClient(settings);
         }
     }
 }
