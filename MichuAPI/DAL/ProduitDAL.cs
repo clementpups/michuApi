@@ -14,7 +14,7 @@ namespace MichuAPI.DAL
 
         }
 
-        public Task<IndexResponse> EnregistreeProduits(string jsonProduits, string nomIndex)
+        public Task<IndexResponse> EnregistrerProduits(string jsonProduits, string nomIndex)
         {
             List<Produit> produits;
             produits = Produit.DeserialiserProduits(jsonProduits);

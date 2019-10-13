@@ -14,10 +14,10 @@ namespace MichuAPI.Services
         {
             
         }
-        public async Task<IndexResponse> EnregistreeProduits(string jsonProduits, string nomIndex)
+        public async Task<IndexResponse> EnregistrerProduits(string jsonProduits, string nomIndex)
         {
             ProduitDAL produitDal = new ProduitDAL();
-            return await produitDal.EnregistreeProduits(jsonProduits, nomIndex);
+            return await produitDal.EnregistrerProduits(jsonProduits, nomIndex);
         }
     }
 }
