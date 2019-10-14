@@ -34,7 +34,7 @@ namespace MichuAPI.Controllers
         /// </summary>
         /// <param name="jsonProduits">Liste des produits sérialisé au format Json</param>
         /// <param name="nomIndex">Nom de l'index (nom du magasin)</param>
-        public void Post(string jsonProduits, string nomIndex)
+        public void Post([FromBody]string jsonProduits, string nomIndex)
         {
             Task<IndexResponse> enregistement = ServiceProduit.EnregistrerProduits(jsonProduits, nomIndex);
             enregistement.Dispose();
